@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mrskar.composeworkshop.composables.Counter
 import com.mrskar.composeworkshop.composables.DefaultTopAppBar
+import com.mrskar.composeworkshop.composables.ThemePreview
 import com.mrskar.composeworkshop.ui.theme.ComposeWorkshopTheme
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.collect
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeWorkshopTheme {
-                Content()
+                ThemePreview()
             }
         }
     }
