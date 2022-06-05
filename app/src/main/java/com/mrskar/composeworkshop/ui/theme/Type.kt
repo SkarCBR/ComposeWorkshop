@@ -76,6 +76,7 @@ private val TextStyle.Companion.Caption: TextStyle
         letterSpacing = 0.0.sp
     )
 
+// Adding TextStyle using kotlin extension function
 val TextStyle.Companion.Small: TextStyle
     get() = TextStyle(
         fontWeight = FontWeight.Normal,
@@ -83,6 +84,7 @@ val TextStyle.Companion.Small: TextStyle
         lineHeight = 20.sp,
     )
 
+// Adding TextStyle to Typography using kotlin extension function
 val Typography.tiny: TextStyle
     get() = TextStyle(
         fontWeight = FontWeight.Normal,

@@ -51,13 +51,14 @@ private val NewLightThemeColors = lightColors(
 
 @Composable
 fun ComposeWorkshopTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    theme: AvailableThemes = if (isSystemInDarkTheme()) AvailableThemes.DefaultLight else AvailableThemes.DefaultDark,
     content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
+    val colors = when (theme) {
+        AvailableThemes.DefaultDark -> DarkColorPalette
+        AvailableThemes.CustomLight -> NewLightThemeColors
+        AvailableThemes.Legacy -> LightThemeColors
+        else -> LightColorPalette
     }
 
     MaterialTheme(
@@ -66,4 +67,11 @@ fun ComposeWorkshopTheme(
         shapes = Shapes,
         content = content
     )
+}
+
+enum class AvailableThemes {
+    DefaultLight,
+    DefaultDark,
+    CustomLight,
+    Legacy,
 }
