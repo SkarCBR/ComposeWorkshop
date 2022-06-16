@@ -1,4 +1,4 @@
-package com.mrskar.composeworkshop.composables
+package com.mrskar.composeworkshop.themepreviews
 
 import androidx.compose.material.BottomAppBar
 import androidx.compose.material.Icon
@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.mrskar.composeworkshop.MenuAction
+import com.mrskar.composeworkshop.composables.CustomTopAppBar
 import com.mrskar.composeworkshop.ui.theme.AvailableThemes
 import com.mrskar.composeworkshop.ui.theme.ComposeWorkshopTheme
 

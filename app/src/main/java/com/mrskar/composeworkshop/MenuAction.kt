@@ -2,7 +2,7 @@ package com.mrskar.composeworkshop
 
 import androidx.annotation.DrawableRes
 
-internal sealed class MenuAction(
+sealed class MenuAction(
     val label: String,
     @DrawableRes val icon: Int
 ) {

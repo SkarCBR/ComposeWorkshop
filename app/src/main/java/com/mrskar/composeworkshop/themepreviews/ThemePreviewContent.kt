@@ -1,4 +1,4 @@
-package com.mrskar.composeworkshop.composables
+package com.mrskar.composeworkshop.themepreviews
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues

@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun Counter(count: Int, updateCount: (Int) -> Unit) {
+fun CounterButtons(count: Int, updateCount: (Int) -> Unit) {
     Row {
         Button(
             onClick = { updateCount(count + 1) },

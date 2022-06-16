@@ -6,6 +6,33 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
+@Composable
+fun ComposeWorkshopTheme(
+    theme: AvailableThemes = if (isSystemInDarkTheme()) AvailableThemes.DefaultLight else AvailableThemes.DefaultDark,
+    content: @Composable () -> Unit
+) {
+    val colors = when (theme) {
+        AvailableThemes.DefaultDark -> DarkColorPalette
+        AvailableThemes.CustomLight -> NewLightThemeColors
+        AvailableThemes.Legacy -> LightThemeColors
+        else -> LightColorPalette
+    }
+
+    MaterialTheme(
+        colors = colors,
+        typography = AppThemeTypography,
+        shapes = Shapes,
+        content = content
+    )
+}
+
+enum class AvailableThemes {
+    DefaultLight,
+    DefaultDark,
+    CustomLight,
+    Legacy,
+}
+
 private val DarkColorPalette = darkColors(
     primary = Purple200,
     primaryVariant = Purple700,
@@ -18,7 +45,6 @@ private val LightColorPalette = lightColors(
     secondary = Teal200
 )
 
-// This is to get things ready to try different Theme color scheme.
 private val LightThemeColors = lightColors(
     primary = White,
     primaryVariant = White,
@@ -48,30 +74,3 @@ private val NewLightThemeColors = lightColors(
     surface = White,
     onSurface = BrandBlack,
 )
-
-@Composable
-fun ComposeWorkshopTheme(
-    theme: AvailableThemes = if (isSystemInDarkTheme()) AvailableThemes.DefaultLight else AvailableThemes.DefaultDark,
-    content: @Composable () -> Unit
-) {
-    val colors = when (theme) {
-        AvailableThemes.DefaultDark -> DarkColorPalette
-        AvailableThemes.CustomLight -> NewLightThemeColors
-        AvailableThemes.Legacy -> LightThemeColors
-        else -> LightColorPalette
-    }
-
-    MaterialTheme(
-        colors = colors,
-        typography = AppThemeTypography,
-        shapes = Shapes,
-        content = content
-    )
-}
-
-enum class AvailableThemes {
-    DefaultLight,
-    DefaultDark,
-    CustomLight,
-    Legacy,
-}
