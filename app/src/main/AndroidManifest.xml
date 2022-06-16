@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeWorkshop">
         <activity
-            android:name=".MainActivity"
+            android:name=".interoperability.MainActivityXML"
+            android:exported="false"
+            android:theme="@style/Theme.ComposeWorkshop" />
+        <activity
+            android:name=".main.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.ComposeWorkshop"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
