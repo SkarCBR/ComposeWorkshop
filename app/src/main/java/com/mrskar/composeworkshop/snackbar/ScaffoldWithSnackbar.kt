@@ -30,12 +30,13 @@ import kotlinx.coroutines.flow.receiveAsFlow
 
 @Composable
 private fun ScaffoldWithSnackbar() {
-    val snackbarHostState = remember { SnackbarHostState() }
+    val scaffoldState = rememberScaffoldState()
     // we allow only one snackbar to be in the queue here, hence conflated
     val channel = remember { Channel<SnackbarType>(Channel.CONFLATED) }
 
     Scaffold(
-        scaffoldState = rememberScaffoldState(snackbarHostState = snackbarHostState),
+        scaffoldState = scaffoldState,
+        snackbarHost = { CustomSnackbarHost(hostState = it) },
         modifier = Modifier.fillMaxSize(),
         backgroundColor = MaterialTheme.colors.background,
     ) {
@@ -65,7 +66,7 @@ private fun ScaffoldWithSnackbar() {
             }
         }
     }
-    SnackBarComponent(channel, snackbarHostState)
+    SnackBarComponent(channel, scaffoldState.snackbarHostState)
 }
 
 @Composable
