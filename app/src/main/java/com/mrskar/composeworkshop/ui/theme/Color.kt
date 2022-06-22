@@ -9,6 +9,8 @@ val Teal200 = Color(0xFF03DAC5)
 
 val BrandBlue = Color(0xFF0050AA)
 val BrandBluePressed = Color(0xFF003673)
+val BlueSky = Color(0xFF64BEFA)
+val BlueSkyPressed = Color(0xFF55A1D4)
 val White = Color(0xFFFFFFFF)
 val BrandBlack = Color(0xFF222222)
 val RedTomato = Color(0xFFE60A14)

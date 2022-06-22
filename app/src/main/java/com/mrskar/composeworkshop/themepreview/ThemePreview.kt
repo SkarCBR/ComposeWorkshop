@@ -1,5 +1,7 @@
-package com.mrskar.composeworkshop.themepreviews
+package com.mrskar.composeworkshop.themepreview
 
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomAppBar
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -45,7 +47,7 @@ fun ThemePreview(theme: AvailableThemes = AvailableThemes.DefaultLight) {
                 }
             }
         ) {
-            ThemePreviewContent()
+            ThemePreviewContent(Modifier.fillMaxSize().padding(it))
         }
     }
 }

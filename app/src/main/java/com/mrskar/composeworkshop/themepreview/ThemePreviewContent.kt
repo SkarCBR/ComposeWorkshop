@@ -1,8 +1,7 @@
-package com.mrskar.composeworkshop.themepreviews
+package com.mrskar.composeworkshop.themepreview
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
 import androidx.compose.material.FloatingActionButton
@@ -18,13 +17,16 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ThemePreviewContent() {
+fun ThemePreviewContent(
+    modifier: Modifier = Modifier
+) {
     val checkedState = remember { mutableStateOf(true) }
     LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier,
         contentPadding = PaddingValues(8.dp),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -66,4 +68,10 @@ fun ThemePreviewContent() {
             )
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun DefaultPreview() {
+    ThemePreviewContent()
 }
